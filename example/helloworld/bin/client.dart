@@ -37,8 +37,9 @@ Future<void> main(List<String> args) async {
       options: CallOptions(compression: const GzipCodec()),
     );
     print('Greeter client received: ${response.message}');
-  } catch (e) {
+  } catch (e, st) {
     print('Caught error: $e');
+    print('Stack trace\n$st');
   }
   await channel.shutdown();
 }
