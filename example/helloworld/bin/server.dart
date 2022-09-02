@@ -20,6 +20,7 @@ import 'package:helloworld/src/generated/helloworld.pbgrpc.dart';
 class GreeterService extends GreeterServiceBase {
   @override
   Future<HelloReply> sayHello(ServiceCall call, HelloRequest request) async {
+    await Future.delayed(Duration(seconds: 5));
     return HelloReply()..message = 'Hello, ${request.name}!';
   }
 }

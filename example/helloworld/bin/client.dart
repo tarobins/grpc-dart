@@ -27,7 +27,7 @@ Future<void> main(List<String> args) async {
           CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
     ),
   );
-  final stub = GreeterClient(channel);
+  final stub = GreeterClient(channel, options: CallOptions(timeout: Duration(seconds: 2)));
 
   final name = args.isNotEmpty ? args[0] : 'world';
 
