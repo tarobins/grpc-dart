@@ -40,6 +40,7 @@ Future<void> main(List<String> args) async {
   } catch (e, st) {
     print('Caught error: $e');
     print('Stack trace\n$st');
+    print("That's all folks.");
   }
   await channel.shutdown();
 }
